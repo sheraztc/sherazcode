@@ -8,9 +8,10 @@ project_db="${project_name}_db"
 # Var Paths
 path_base="$(pwd)"
 path_db="${path_base}/data/db"
+mkdir -p $path_db
 path_wp_content="${path_base}/data/wp-content"
+mkdir -p $path_wp_content
 
-# [$# -eq 0] OR
 
 if [[ "$#" -eq 0  ||  "$1" == "build" ]];
 then
