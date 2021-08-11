@@ -42,7 +42,7 @@ then
         -v $path_db:/var/lib/mysql \
         --network $project_network \
         -d mysql
-    
+
 elif [ "$1" == "restart" ];
 then
     echo "Restart"
