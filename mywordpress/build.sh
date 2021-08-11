@@ -4,6 +4,7 @@
 project_name="test_wordpress"
 project_network="${project_name}_network"
 project_db="${project_name}_db"
+password=password
 
 # Var Paths
 path_base="$(pwd)"
@@ -34,10 +35,10 @@ then
         -p 3306:3306 \
         -p 33060:33060 \
         --name $project_db \
-        --env="MYSQL_ROOT_PASSWORD=password" \
-        --env="MYSQL_DATABASE=sb_db" \
-        --env="MYSQL_USER=dbuser" \
-        --env="MYSQL_PASSWORD=password" \
+        --env="MYSQL_ROOT_PASSWORD=password123" \
+        --env="MYSQL_DATABASE=$project_db" \
+        --env="MYSQL_USER=$project_db" \
+        --env="MYSQL_PASSWORD=password123" \
         -v $path_db:/var/lib/mysql \
         --network $project_network \
         -d mysql
