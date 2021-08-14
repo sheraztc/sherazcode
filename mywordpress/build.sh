@@ -1,10 +1,10 @@
 #!/bin/bash
-
+sudo rm -rf data
 # Var Names
 project_name="test_wordpress"
 project_network="${project_name}_network"
 project_db="${project_name}_db"
-password=password
+password="password"
 
 # Var Paths
 path_base="$(pwd)"
@@ -42,6 +42,8 @@ then
         -v $path_db:/var/lib/mysql \
         --network $project_network \
         -d mysql
+
+        
 
 elif [ "$1" == "restart" ];
 then
