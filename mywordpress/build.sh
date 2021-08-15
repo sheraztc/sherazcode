@@ -50,9 +50,11 @@ then
     docker run --detach \
         -p 8080:80 \
         --name $project_name \
+        --env="WORDPRESS_DB_NAME=${project_db}" \
         --env="WORDPRESS_DB_HOST=${project_db}" \
         --env="WORDPRESS_DB_USER=${project_db}" \
         --env="WORDPRESS_DB_PASSWORD=${password}" \
+        -v $path_wp_content:/var/www/html/wp-content \
         --network $project_network \
         wordpress
 
