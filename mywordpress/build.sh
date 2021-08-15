@@ -33,9 +33,7 @@ then
 
     # Build
     echo "Building..."
-    # docker network create --driver=bridge $project_network
-
-echo "${password}"
+    docker network create --driver=bridge $project_network
 
     docker run --detach \
         -p 3306:3306 \
@@ -49,14 +47,14 @@ echo "${password}"
         --network $project_network \
         mysql
 
-    # docker run --detach \
-    #     -p 8080:80 \
-    #     --name $project_name \
-    #     --env="WORDPRESS_DB_HOST=${project_db}:3306" \
-    #     --env="WORDPRESS_DB_USER=${project_db}" \
-    #     --env="WORDPRESS_DB_PASSWORD=${password}" \
-    #     --network $project_network \
-    #     wordpress
+    docker run --detach \
+        -p 8080:80 \
+        --name $project_name \
+        --env="WORDPRESS_DB_HOST=${project_db}" \
+        --env="WORDPRESS_DB_USER=${project_db}" \
+        --env="WORDPRESS_DB_PASSWORD=${password}" \
+        --network $project_network \
+        wordpress
 
 elif [ "$1" == "restart" ];
 then
