@@ -1,5 +1,11 @@
-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
+ghp_qkuVY6Z7W7
 
-git remote set-url origin https://sheraztc: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@github.com/sheraztc/sherazcode.git
+fQDCj8ZU90wZU
+
+msixzw34Tb2bY
+
+git remote set-url origin https://sheraztc:ghp_qkuVY6Z7W7fQDC
+j8ZU90wZ
+Umsixzw34Tb2bY@github.com/sheraztc/sherazcode.git
 
 git branch --set-upstream-to=origin/main main
