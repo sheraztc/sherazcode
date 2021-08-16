@@ -1,14 +1,14 @@
 #!/bin/bash
-# Temporary Remove commands. Remove them
-sudo rm -rf data
-docker rm -f $(docker ps -a -q)
+# TODO: Temporary. Remove commands. Remove them. It recreates everything. DB and site
+# sudo rm -rf data
+# docker rm -f $(docker ps -a -q)
 
 
 # Var Names
-project_name="test_wordpress"
+project_name="bitsegment"
 project_network="${project_name}_network"
 project_db="${project_name}_db"
-password="password"
+password="B!tS3g2021"
 
 # Var Paths
 path_base="$(pwd)"
@@ -35,6 +35,7 @@ then
     echo "Building..."
     docker network create --driver=bridge $project_network
 
+    # TODO: remove publish ports once complete
     docker run --detach \
         -p 3306:3306 \
         -p 33060:33060 \
