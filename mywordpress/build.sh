@@ -14,8 +14,8 @@ password="B!tS3g2021"
 path_base="$(pwd)"
 path_db="${path_base}/data/db"
 mkdir -p $path_db
-path_wp_content="${path_base}/data/wp-content"
-mkdir -p $path_wp_content
+path_wp_html="${path_base}/data/html"
+mkdir -p $path_wp_html
 
 
 if [[ "$#" -eq 0  ||  "$1" == "build" ]];
@@ -55,7 +55,7 @@ then
         --env="WORDPRESS_DB_HOST=${project_db}" \
         --env="WORDPRESS_DB_USER=${project_db}" \
         --env="WORDPRESS_DB_PASSWORD=${password}" \
-        -v $path_wp_content:/var/www/html/wp-content \
+        -v $path_wp_html:/var/www/html \
         --network $project_network \
         wordpress
 
