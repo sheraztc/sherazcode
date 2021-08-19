@@ -46,7 +46,7 @@ then
         --env="MYSQL_PASSWORD=${password}" \
         -v $path_db:/var/lib/mysql \
         --network $project_network \
-        mysql
+        mysql:8.0.26
 
     docker run --detach \
         -p 8080:80 \
@@ -57,7 +57,7 @@ then
         --env="WORDPRESS_DB_PASSWORD=${password}" \
         -v $path_wp_html:/var/www/html \
         --network $project_network \
-        wordpress
+        wordpress:5.8.0
 
 elif [ "$1" == "restart" ];
 then
