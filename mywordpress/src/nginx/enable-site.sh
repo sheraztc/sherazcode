@@ -14,4 +14,6 @@ ln -s ${nginx_root}/sites-available/${site_name} ${nginx_root}/sites-enabled/
 echo "Testing nginx configurations"
 nginx -t
 
+echo "Reloading nginx"
 
+systemctl reload nginx

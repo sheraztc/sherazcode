@@ -1,7 +1,7 @@
 #!/bin/bash
 # TODO: Temporary. Remove commands. Remove them. It recreates everything. DB and site
-# sudo rm -rf data
-# docker rm -f $(docker ps -a -q)
+sudo rm -rf data
+docker rm -f $(docker ps -a -q)
 
 
 # Var Names
