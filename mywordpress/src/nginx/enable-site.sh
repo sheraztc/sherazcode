@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # vars
-site_name="mysite.com"
+site_name="sheraz.com"
 nginx_root="/etc/nginx"
 
 echo "Configuring ${site_name}"
@@ -16,4 +16,7 @@ nginx -t
 
 echo "Reloading nginx"
 
-systemctl reload nginx
+systemctl stop nginx
+systemctl start nginx
+
+echo "Complete. Enable Site. $(date)."
